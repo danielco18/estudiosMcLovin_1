@@ -52,7 +52,7 @@
 
         public function updateAlimento($data){
             try {
-                $sql="UPDATE alimento SET alimento = ?, proteinas = ?, calorias = ?, azucares = ?, carbohibratos = ?, fibras = ?, vitaminas = ? WHERE cod_alimento = ?";
+                $sql="UPDATE alimento SET alimento = ?, proteinas = ?, calorias = ?, azucares = ?, carbohidratos = ?, fibras = ?, vitaminas = ? WHERE cod_alimento = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7]));
 
