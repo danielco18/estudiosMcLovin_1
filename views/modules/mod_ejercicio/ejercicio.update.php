@@ -10,7 +10,7 @@
             <input  type="text" class="form-control" name="data[]" value="<?php echo $ejercicio['nomEjercicio']; ?>">
         </div>
             <div class="form-group">
-                <label for="desc">Ejercicio</label>
+                <label for="ejercicio">Ejercicio</label>
                 <input type="text" class="form-control" name="data[]" value="<?php echo $ejercicio['ejercicio']; ?>">
             </div>
             <input type="hidden" readonly value="<?php echo $ejercicio['cod_ejer']; ?>" name="data[]">

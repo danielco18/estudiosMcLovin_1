@@ -10,7 +10,7 @@
                     <input type="text" class="form-control" name="data[]" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="desc">Ejercicio</label>
+                    <label for="ejercicio">Ejercicio</label>
                     <input class="form-control" name="data[]" id="ejer" required>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2">

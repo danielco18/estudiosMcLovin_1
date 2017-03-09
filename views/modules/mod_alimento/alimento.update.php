@@ -10,27 +10,27 @@
             <input  type="text" class="form-control" name="data[]" value="<?php echo $alimento['alimento']; ?>">
         </div>
         <div class="form-group">
-            <label for="desc">Proteinas</label>
+            <label for="proteinas">Proteinas</label>
             <input type="text" class="form-control" name="data[]" value="<?php echo $alimento['proteinas']; ?>">
         </div>
         <div class="form-group">
-            <label for="desc">Calorias</label>
+            <label for="calorias">Calorias</label>
             <input type="text" class="form-control" name="data[]" value="<?php echo $alimento['calorias']; ?>">
         </div>
         <div class="form-group">
-            <label for="desc">Azucares</label>
+            <label for="azucares">Azucares</label>
             <input type="text" class="form-control" name="data[]" value="<?php echo $alimento['azucares']; ?>">
         </div>
         <div class="form-group">
-            <label for="desc">Carbohidratos</label>
+            <label for="carbohidratos">Carbohidratos</label>
             <input type="text" class="form-control" name="data[]" value="<?php echo $alimento['carbohidratos']; ?>">
         </div>
         <div class="form-group">
-            <label for="desc">Fibras</label>
+            <label for="fibras">Fibras</label>
             <input type="text" class="form-control" name="data[]" value="<?php echo $alimento['fibras']; ?>">
         </div>
         <div class="form-group">
-            <label for="desc">Vitaminas</label>
+            <label for="vitaminas">Vitaminas</label>
             <input type="text" class="form-control" name="data[]" value="<?php echo $alimento['vitaminas']; ?>">
         </div>
             <input type="hidden" readonly value="<?php echo $alimento['cod_alimento']; ?>" name="data[]">

@@ -10,28 +10,28 @@
                     <input type="text" class="form-control" name="data[]" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="desc">Proteinas</label>
+                    <label for="proteinas">Proteinas</label>
                     <input type="text" class="form-control" name="data[]" id="pro" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="name">Calorias</label>
-                    <input type="text" class="form-control" name="data[]" id="Cal" required>
+                    <label for="calorias">Calorias</label>
+                    <input type="text" class="form-control" name="data[]" id="cal" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Azucares</label>
-                    <input type="text" class="form-control" name="data[]" id="Azu" required>
+                    <label for="azucares">Azucares</label>
+                    <input type="text" class="form-control" name="data[]" id="azu" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Carbohidratos</label>
-                    <input type="text" class="form-control" name="data[]" id="Car" required>
+                    <label for="carbohidratos">Carbohidratos</label>
+                    <input type="text" class="form-control" name="data[]" id="car" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Fibras</label>
-                    <input type="text" class="form-control" name="data[]" id="Fib" required>
+                    <label for="fibras">Fibras</label>
+                    <input type="text" class="form-control" name="data[]" id="fib" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Vitaminas</label>
-                    <input type="text" class="form-control" name="data[]" id="Vit" required>
+                    <label for="vitaminas">Vitaminas</label>
+                    <input type="text" class="form-control" name="data[]" id="vit" required>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2">
                     <a class="btn btn-primary" href="index.php">ATRÁS</a>
