@@ -60,8 +60,9 @@
             </form>
         </div>
     </div>
+    <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-sm-12">
             <table id="dataTable" class="displat table-hover" width="100%">
                 <thead>
                     <tr>
@@ -116,4 +117,5 @@
             </table>
         </div>
     </div>
+  </div>
 </div>
