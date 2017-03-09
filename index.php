@@ -21,6 +21,6 @@
     }
 
     if (isset($_GET["msn"])) {
-        echo "<script>('".$_GET["msn"]."')</script>";
+        echo "<script>alert('".$_GET["msn"]."')</script>";
     }
 ?>

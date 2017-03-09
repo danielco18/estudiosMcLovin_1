@@ -7,11 +7,11 @@
             <form class="" action="?c=almuerzo&a=create" method="post">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" name="data[]" id="name">
+                    <input type="text" class="form-control" name="data[]" id="name" required>
                 </div>
                 <div class="form-group">
                     <label for="desc">Descripción</label>
-                    <textarea class="form-control" name="data[]" id="desc"></textarea>
+                    <textarea class="form-control" name="data[]" id="desc" required></textarea>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2">
                     <a class="btn btn-primary" href="index.php">ATRÁS</a>
