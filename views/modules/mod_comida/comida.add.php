@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>GESTIONAR COMIDA</h1>
+            <h1>GESTIONAR COMIDAS</h1>
         </div>
         <div class="col-sm-4 col-sm-offset-4">
             <form class="" action="?c=comida&a=create" method="post">
