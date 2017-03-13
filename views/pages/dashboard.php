@@ -1,4 +1,4 @@
-<div class="">
+<div>
   <header>
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
@@ -42,10 +42,12 @@
           </ul>
           </div>
         </div>
+        <div class="container-responsive">
+            <div class="fondo">
+              <img src="views/assets/img/MF.jpg">
+            </div>
+        </div>
       </div>
     </nav>
   </header>
-</div>
-<div class="">
-    <img src="..." class="img-responsive" alt="Responsive image">
 </div>
