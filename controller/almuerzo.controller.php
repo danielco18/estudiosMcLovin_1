@@ -13,7 +13,9 @@
             require_once 'views/modules/mod_almuerzo/almuerzo.add.php';
             require_once 'views/include/footer.php';
         }
-
+        if (isset($_POST[""])) {
+            # code...
+        }
         public function create(){
             $data = $_POST["data"];
             $result = $this->ALmodel->createAlmuerzo($data);
