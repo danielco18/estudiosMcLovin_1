@@ -8,7 +8,7 @@
         private static $db_conn = null;
 
         public static function connect(){
-            if(self::$db_conn==null){
+            if (self::$db_conn==null) {
                 try {
                     self::$db_conn = new PDO("mysql:host=".self::$db_host.";dbname=".self::$db_name,self::$db_user,self::$db_pass);
                     self::$db_conn->exec("SET CHARACTER SET utf8");
@@ -20,7 +20,7 @@
         }
 
         public static function disconnect(){
-            self::$db_conn=null;
+            self::$db_conn = null;
         }
     }
 

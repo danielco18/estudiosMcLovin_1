@@ -1,4 +1,5 @@
 <?php
+    require_once 'model/conn.model.php';
     if (isset($_REQUEST["c"])) {
         $controller = strtolower($_REQUEST["c"]);
         $action = isset($_REQUEST["a"]) ? $_REQUEST["a"] : "mainPage";
@@ -20,6 +21,6 @@
     }
 
     if (isset($_GET["msn"])) {
-        echo "<script>('".$_GET["msn"]."')</script>";
+        echo "<script>alert('".$_GET["msn"]."')</script>";
     }
 ?>
