@@ -27,6 +27,8 @@
                 <li><a href="?c=snack">Snacks</a></li>
                 <li class="divider"></li>
                 <li><a href="?c=comida">Cena</a></li>
+                <li class="divider"></li>
+                <li><a href="?c=dieta">Dieta</a></li>
               </ul>
             </li>
             <li class="dropdown">
