@@ -16,8 +16,9 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
             $result = $this->USmodel->createUsuario($data);
-            header("Location: index.php?c=usuario&msn=$result");
+            header("Location: index.php?c=usuario&msn=$result&");
         }
 
         public function update(){
