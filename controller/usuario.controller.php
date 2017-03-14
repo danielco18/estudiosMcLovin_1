@@ -1,5 +1,6 @@
 <?php
     require_once "model/usuario.model.php";
+    require_once "views/assets/random/random.php";
 
     class UsuarioController{
         private $USmodel;
@@ -15,10 +16,14 @@
         }
 
         public function create(){
+            $tokken=randAlphanum('30');
+            $n=2;
+            $s="Juan";
+            $cod=2;
             $data = $_POST["data"];
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
-            $result = $this->USmodel->createUsuario($data);
-            header("Location: index.php?c=usuario&msn=$result&");
+            $result = $this->USmodel->createUsuario($data,$tokken,$cod,$n,$s);
+            header("Location: index.php?c=usuario&msn=$result");
         }
 
         public function update(){

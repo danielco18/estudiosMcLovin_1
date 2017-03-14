@@ -11,12 +11,14 @@
             }
         }
 
-        public function createUsuario($data){
+        public function createUsuario($data,$tokken,$cod,$n,$s){
             try {
                 $sql = "INSERT INTO usuario VALUES('',?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
-
+                $sql2 = "INSERT INTO acceso VALUES(?,?,?,?,?)";
+                $query2 = $this->pdo->prepare($sql2);
+                $query2->execute(array($tokken,$cod,$data[2],$n,$s));
                 $msn = "Usuario guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());

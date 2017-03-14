@@ -21,15 +21,14 @@ private $pdo;
     /*foreach ($resultado as $row) {
 
       if (password_verify($data[1],$row["contraseña"])==true) {
-        $resultad=true;
+        $resultado=true;
 
         return $resultado;
       }
     }*/
-    /*foreach ($resultado as $row) {
-      $hash = $row["contraseña"];
-    }
-    if (password_verify($data[1],$hash)==true) {
+    /*each($resultado);
+      $hash = each($resultado);
+    if (password_verify($data[1],$hash["contraseña"])==true) {
       $resultado=true;
       return $resultado;
     }*/
