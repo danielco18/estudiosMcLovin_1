@@ -20,10 +20,9 @@
             $userId="USU".randAlphanum('30');
             $n=2;
             $s="Juan";
-            $cod=2;
             $data = $_POST["data"];
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
-            $result = $this->USmodel->createUsuario($userId,$data,$tokken,$cod,$n,$s);
+            $result = $this->USmodel->createUsuario($userId,$data,$tokken,$n,$s);
             header("Location: index.php?c=usuario&msn=$result");
         }
 
@@ -36,6 +35,7 @@
 
         public function updateData(){
             $data = $_POST["data"];
+            $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
             $result = $this->USmodel->updateUsuario($data);
             header("Location: index.php?c=usuario&msn=$result");
         }

@@ -21,7 +21,7 @@ class MainController{
           $data = $_POST["data"];
           $result = $this->Lmodel->compruebaLogin($data);
           if($result==true){
-            header("Location: index.php?c=main&a=dashboard&p");
+            header("Location: index.php?c=main&a=dashboard");
           }else {
             $msn = "Correo o Contraseña invalida";
             header("Location: index.php?c=main&msn=$msn");
