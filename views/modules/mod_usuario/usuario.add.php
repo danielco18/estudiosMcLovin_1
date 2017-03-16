@@ -27,14 +27,6 @@
                 </div>
                 <div class="form-group">
                     <select name="data[]">
-                        <?php foreach ($this->USmodel->readDieta() as $row) { ?>
-                            <option value="<?php echo $row['cod_miDieta']; ?>"><?php echo $row["cod_miDieta"]; ?></option>
-                        <?php } ?>
-                    </select>
-                    <label>Cod_dieta</label>
-                </div>
-                <div class="form-group">
-                    <select name="data[]">
                         <?php foreach ($this->USmodel->readCiudad() as $row) { ?>
                             <option value="<?php echo $row['cod_ciudad']; ?>"><?php echo $row["nombre"]; ?></option>
                         <?php } ?>
@@ -58,7 +50,6 @@
                         <th>Email</th>
                         <th>contraseña</th>
                         <th>cod_rol</th>
-                        <th>cod_miDieta</th>
                         <th>cod_ciudad</th>
                         <th>Acción</th>
                     </tr>
@@ -75,7 +66,6 @@
                             <td><?php echo $row["email"]; ?></td>
                             <td><?php echo $row["contraseña"]; ?></td>
                             <td><?php echo $row["cod_rol"]; ?></td>
-                            <td><?php echo $row["cod_miDieta"]; ?></td>
                             <td><?php echo $row["cod_ciudad"]; ?></td>
                             <td>
                                 <a href="?c=usuario&a=update&uscode=<?php echo $row['cod_usu'];?>">

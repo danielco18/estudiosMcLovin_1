@@ -45,6 +45,14 @@
                     </select>
                     <label>Snack</label>
                 </div>
+                <div class="form-group">
+                    <select name="data[]">
+                        <?php foreach ($this->DImodel->readUsuario() as $row) { ?>
+                            <option value="<?php echo $row['cod_usu']; ?>"><?php echo $row["nombre"]; ?></option>
+                        <?php } ?>
+                    </select>
+                    <label>Usuario</label>
+                </div>
                 <div class="col-sm-8 col-sm-offset-2">
                     <a class="btn btn-primary" href="?c=main&a=dashboard">ATRÁS</a>
                     <button class="btn btn-success">GUARDAR</button>
@@ -64,6 +72,7 @@
                         <th>cod_almuerzo</th>
                         <th>cod_comida</th>
                         <th>cod_snack</th>
+                        <th>cod_usu</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -81,6 +90,7 @@
                             <td><?php echo $row["cod_almuerzo"]; ?></td>
                             <td><?php echo $row["cod_comida"]; ?></td>
                             <td><?php echo $row["cod_snack"]; ?></td>
+                            <td><?php echo $row["cod_usu"]; ?></td>
                             <td>
                                 <a href="?c=dieta&a=update&dicode=<?php echo $row['cod_miDieta'];?>">
                                     <i class="material-icons">border_color</i>

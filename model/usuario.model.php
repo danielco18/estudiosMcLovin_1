@@ -11,14 +11,14 @@
             }
         }
 
-        public function createUsuario($data,$tokken,$cod,$n,$s){
+        public function createUsuario($userId,$data,$tokken,$cod,$n,$s){
             try {
-                $sql = "INSERT INTO usuario VALUES('',?,?,?,?,?,?)";
+                $sql = "INSERT INTO usuario VALUES(?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
+                $query->execute(array($userId,$data[0],$data[1],$data[2],$data[3],$data[4]));
                 $sql2 = "INSERT INTO acceso VALUES(?,?,?,?,?)";
                 $query2 = $this->pdo->prepare($sql2);
-                $query2->execute(array($tokken,$cod,$data[2],$n,$s));
+                $query2->execute(array($tokken,$data[2],$n,$s,$userId));
                 $msn = "Usuario guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -90,9 +90,9 @@
 
         public function updateUsuario($data){
             try {
-                $sql="UPDATE usuario SET nombre = ?, email = ?, contraseña = ?, cod_rol = ?, cod_miDieta = ?, cod_ciudad = ? WHERE cod_usu = ?";
+                $sql="UPDATE usuario SET nombre = ?, email = ?, contraseña = ? WHERE cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
+                $query->execute(array($data[0],$data[1],$data[2],$data[3]));
                 $msn = "Usuario Modifico con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
