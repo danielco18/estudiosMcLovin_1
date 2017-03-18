@@ -18,7 +18,7 @@
         public function create(){
             $tokken=randAlphanum('30');
             $userId="USU".randAlphanum('30');
-            $n=2;
+            $n=3;
             $s="Juan";
             $data = $_POST["data"];
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
