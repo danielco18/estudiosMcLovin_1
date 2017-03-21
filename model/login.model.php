@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class LoginModel{
 private $pdo;
 
@@ -14,11 +14,12 @@ private $pdo;
 
    public function compruebaLogin($data){
 	  try {
-  	$sql="SELECT password FROM usuario WHERE email= ? ";
+  	$sql="SELECT * FROM usuario WHERE email= ? ";
 		$query=$this->pdo->prepare($sql);
 		$query->execute(array($data[0]));
     $result = $query->fetch(PDO::FETCH_BOTH);
-    if (password_verify($data[1],$result[0])) {
+    if (password_verify($data[1],$result[3])) {
+      $_SESSION["usuario"] = $result[1];
       $result=true;
       return $result;
     }else{

@@ -1,3 +1,4 @@
+<h1>BIENVENIDO <?php echo $_SESSION["usuario"]; ?></h1>
 <div>
   <header>
     <nav class="navbar navbar-inverse navbar-static-top">
