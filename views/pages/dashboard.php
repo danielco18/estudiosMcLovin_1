@@ -27,6 +27,8 @@
                 <li><a href="?c=snack">Snacks</a></li>
                 <li class="divider"></li>
                 <li><a href="?c=comida">Cena</a></li>
+                <li class="divider"></li>
+                <li><a href="?c=dieta">Dieta</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -36,6 +38,8 @@
               <li><a href="?c=rol">Rol</a></li>
               <li class="divider"></li>
               <li><a href="?c=pagina">Pagina</a></li>
+              <li class="divider"></li>
+              <li><a href="?c=usuario">Usuario</a></li>
             </ul>
           </li>
             <li><a href="?c=ejercicio">Ejercicios</a></li>
