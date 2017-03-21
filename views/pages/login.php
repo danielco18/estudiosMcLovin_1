@@ -4,7 +4,7 @@
         <div class="form-group" id="campo1">
           <input type="text" class="form-control" placeholder="Email" name="data[]">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="campo2">
           <input type="password" class="form-control" placeholder="Contraseña" name="data[]">
         </div>
         <button>ENVIAR</button>
