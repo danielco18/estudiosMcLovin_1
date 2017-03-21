@@ -6,9 +6,14 @@
           <input type="email" class="form-control" placeholder="Email" name="data[]" required="Este campo es obligatorio">
           <span class="glyphicon glyphicon-user" aria-hidden="true" id="contrasena"></span>
         </div>
+<<<<<<< HEAD
         <div class="form-group">
           <input type="password" class="form-control" placeholder="Contraseña"  name="data[]" required="Este campo es obligatorio">
           <span class="glyphicon glyphicon-lock" aria-hidden="true" id="contrasena"></span>
+=======
+        <div class="form-group" id="campo2">
+          <input type="password" class="form-control" placeholder="Contraseña" name="data[]">
+>>>>>>> refs/remotes/origin/Pablo_Restrepo
         </div>
       </form>
       <button  type="button" class="btn btn-primary btn-lg btn-block">INICIAR SESIÓN</button>
