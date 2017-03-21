@@ -14,7 +14,7 @@ private $pdo;
 
    public function compruebaLogin($data){
 	  try {
-  	$sql="SELECT contraseña FROM usuario WHERE email= ? ";
+  	$sql="SELECT password FROM usuario WHERE email= ? ";
 		$query=$this->pdo->prepare($sql);
 		$query->execute(array($data[0]));
     $result = $query->fetch(PDO::FETCH_BOTH);

@@ -90,7 +90,7 @@
 
         public function updateUsuario($data){
             try {
-                $sql="UPDATE usuario SET nombre = ?, email = ?, contraseña = ? WHERE cod_usu = ?";
+                $sql="UPDATE usuario SET nombre = ?, email = ?, password = ? WHERE cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3]));
                 $msn = "Usuario Modifico con exito!";
