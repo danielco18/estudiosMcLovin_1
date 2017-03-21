@@ -64,7 +64,7 @@
                             <td><?php echo $item; ?></td>
                             <td><?php echo $row["nombre"]; ?></td>
                             <td><?php echo $row["email"]; ?></td>
-                            <td><?php echo $row["contraseña"]; ?></td>
+                            <td><?php echo $row["password"]; ?></td>
                             <td><?php echo $row["cod_rol"]; ?></td>
                             <td><?php echo $row["cod_ciudad"]; ?></td>
                             <td>

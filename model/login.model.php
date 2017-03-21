@@ -14,10 +14,17 @@ private $pdo;
 
    public function compruebaLogin($data){
 	  try {
-  	$sql="SELECT * FROM usuario WHERE email= ? AND contraseña= ?";
+  	$sql="SELECT password FROM usuario WHERE email= ? ";
 		$query=$this->pdo->prepare($sql);
-		$query->execute(array($data[0],$data[1]));
-    $resultado = $query->fetch(PDO::FETCH_BOTH);
+		$query->execute(array($data[0]));
+    $result = $query->fetch(PDO::FETCH_BOTH);
+    if (password_verify($data[1],$result[0])) {
+      $result=true;
+      return $result;
+    }else{
+      $result=false;
+      return $result;
+    }
     /*foreach ($resultado as $row) {
 
       if (password_verify($data[1],$row["contraseña"])==true) {
@@ -32,11 +39,11 @@ private $pdo;
       $resultado=true;
       return $resultado;
     }*/
-      if(count($resultado[0])>0){
+      /*if(count($result[0])>0){
         return true;
       }else {
         return false;
-      }
+      }*/
 		} catch (Exception $e) {
 			die("ERROR".$e->getMessage()."".$e->getFile()."".$e->getLine());
 		}
