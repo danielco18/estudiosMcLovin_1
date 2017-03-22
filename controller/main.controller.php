@@ -8,11 +8,17 @@ class MainController{
             $this->Lmodel  = new LoginModel();
         }
         public function mainPage(){
+          if (isset($_SESSION["usuario"])) {
+            header("location:index.php?c=main&a=dashboard");
+          }
             require_once 'views/include/header.php';
             require_once 'views/pages/login.php';
             require_once 'views/include/footer.php';
         }
         public function dashboard(){
+          if (!isset($_SESSION["usuario"])) {
+          	header("location:index.php?c=main");
+          }
       		require_once 'views/include/header.php';
       		require_once 'views/pages/dashboard.php';
       		require_once 'views/include/footer.php';
@@ -26,6 +32,10 @@ class MainController{
             $msn = "Correo o Contraseña invalida";
             header("Location: index.php?c=main&msn=$msn");
           }
+        }
+        public function close(){
+          session_destroy();
+      		header("Location: index.php?c=main");
         }
    }
 

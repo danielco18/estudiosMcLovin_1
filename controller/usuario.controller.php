@@ -10,6 +10,9 @@
         }
 
         public function mainPage(){
+            if (!isset($_SESSION["usuario"])) {
+              header("location:index.php?c=main");
+            }
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_usuario/usuario.add.php';
             require_once 'views/include/footer.php';
@@ -27,6 +30,9 @@
         }
 
         public function update(){
+          if (!isset($_SESSION["usuario"])) {
+            header("location:index.php?c=main");
+          }
           $field = $_GET["uscode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/mod_usuario/usuario.update.php';
