@@ -14,12 +14,12 @@ private $pdo;
 
    public function compruebaLogin($data){
 	  try {
-  	$sql="SELECT * FROM usuario WHERE email= ? ";
+  	$sql="SELECT * FROM acceso INNER JOIN usuario ON(acceso.cod_usu=usuario.cod_usu) WHERE email= ? ";
 		$query=$this->pdo->prepare($sql);
 		$query->execute(array($data[0]));
     $result = $query->fetch(PDO::FETCH_BOTH);
-    if (password_verify($data[1],$result[3])) {
-      $_SESSION["usuario"] = $result[1];
+    if (password_verify($data[1],$result[1])) {
+      $_SESSION["usuario"] = $result[4];
       $result=true;
       return $result;
     }else{
