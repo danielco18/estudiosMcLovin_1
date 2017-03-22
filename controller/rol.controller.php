@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once "model/rol.model.php";
 
     class RolController{

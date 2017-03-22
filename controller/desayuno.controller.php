@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once "model/desayuno.model.php";
 
     class DesayunoController{

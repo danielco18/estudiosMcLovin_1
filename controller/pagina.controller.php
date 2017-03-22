@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once "model/pagina.model.php";
 
     class PaginaController{
