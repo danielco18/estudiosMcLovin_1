@@ -37,18 +37,7 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
-        public function readDieta(){
-            try {
-                $sql="SELECT * FROM mi_dieta";
-                $query = $this->pdo->prepare($sql);
-                $query->execute();
-                $result = $query->fetchALL(PDO::FETCH_BOTH);
 
-                return $result;
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-        }
         public function readCiudad(){
             try {
                 $sql="SELECT * FROM ciudad ORDER BY nombre";
@@ -64,7 +53,7 @@
 
         public function readUsuario(){
             try {
-                $sql="SELECT * FROM usuario ORDER BY nombre";
+                $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -75,11 +64,11 @@
             }
         }
 
-        public function readUsuarioByCode($field){
+        public function readUsuarioByCode(){
             try {
-                $sql="SELECT * FROM usuario WHERE cod_usu = ?";
+                $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($field));
+                $query->execute(array());
                 $result = $query->fetch(PDO::FETCH_BOTH);
                 return $result;
             } catch (PDOException $e) {
@@ -90,9 +79,12 @@
 
         public function updateUsuario($data){
             try {
-                $sql="UPDATE usuario SET nombre = ?, email = ?, password = ? WHERE cod_usu = ?";
+                $sql="UPDATE usuario SET nombre = ? WHERE cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2],$data[3]));
+                $query->execute(array($data[0],$data[3]));
+                $sql2="UPDATE acceso SET  email = ?, password = ? WHERE cod_usu = ?";
+                $query2 = $this->pdo->prepare($sql2);
+                $query2->execute(array($data[1],$data[2],$data[3]));
                 $msn = "Usuario Modifico con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -105,6 +97,9 @@
                 $sql = "DELETE FROM usuario WHERE cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
+                $sql2 = "DELETE FROM acceso WHERE cod_usu = ?";
+                $query2 = $this->pdo->prepare($sql2);
+                $query2->execute(array($field));
                 $msn = "Usuario Eliminado correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());

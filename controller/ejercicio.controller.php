@@ -1,5 +1,4 @@
 <?php
-session_start();
     require_once "model/ejercicio.model.php";
 
     class EjercicioController{
