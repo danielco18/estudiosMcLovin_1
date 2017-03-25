@@ -64,11 +64,11 @@
             }
         }
 
-        public function readUsuarioByCode(){
+        public function readUsuarioByCode($field){
             try {
-                $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu)";
+                $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu) WHERE usuario.cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array());
+                $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
                 return $result;
             } catch (PDOException $e) {

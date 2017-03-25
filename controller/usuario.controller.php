@@ -54,7 +54,7 @@
           if (!isset($_SESSION["usuario"])) {
             header("location:index.php?c=main");
           }
-          //$field = $_GET["uscode"];
+          $field = $_GET["uscode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/mod_usuario/usuario.update.php';
           require_once 'views/include/footer.php';

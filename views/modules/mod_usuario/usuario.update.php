@@ -1,4 +1,4 @@
-<?php $usuario = $this->USmodel->readUsuarioByCode() ?>
+<?php $usuario = $this->USmodel->readUsuarioByCode($field) ?>
 <div class="container">
     <div class="col-sm-12">
         <h1>MODIFICAR USUARIO</h1>
