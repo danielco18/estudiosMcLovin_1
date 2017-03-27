@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" class="form-control" name="data[]" value="<?php echo $usuario['password']; ?>">
+                <input type="text" class="form-control" name="data[]" value="<?php echo $usuario['password']; ?>">
             </div>
             <input type="hidden" readonly value="<?php echo $usuario['cod_usu']; ?>" name="data[]">
         <div class="col-sm-888 col-sm-offset-2">

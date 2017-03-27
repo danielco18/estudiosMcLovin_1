@@ -1,4 +1,5 @@
 <?php
+
     require_once "model/rol.model.php";
 
     class RolController{
@@ -9,6 +10,9 @@
         }
 
         public function mainPage(){
+            if (!isset($_SESSION["usuario"])) {
+              header("location:index.php?c=main");
+            }
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_rol/rol.add.php';
             require_once 'views/include/footer.php';
@@ -21,6 +25,9 @@
         }
 
         public function update(){
+          if (!isset($_SESSION["usuario"])) {
+            header("location:index.php?c=main");
+          }
           $field = $_GET["rcode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/mod_rol/rol.update.php';
