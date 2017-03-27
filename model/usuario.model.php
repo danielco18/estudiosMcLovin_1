@@ -11,7 +11,7 @@
             }
         }
 
-        public function createUsuario($userId,$data,$tokken,$n,){
+        public function createUsuario($userId,$data,$tokken,$n){
             try {
                 $sql = "INSERT INTO usuario VALUES(?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
