@@ -23,7 +23,11 @@
             $userId="USU".randAlphanum('30');
             $n=3;
             $data = $_POST["data"];
-            if (strlen($data[2])<=8){
+            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3]) || empty($data[5])) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=usuario&msn=$msn");
+            }
+            elseif(strlen($data[2])<=8){
               $msn="La contraseña debe tener mas de 8 caracteres";
               header("Location: index.php?c=usuario&msn=$msn");
             }
@@ -38,7 +42,7 @@
             /*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
               $msn="La contraseña debe tener minimo un simbolo";
               header("Location: index.php?c=usuario&msn=$msn");
-            }*/elseif($data[2]!==$data[5]) {
+            }*/elseif($data[2]!==$data[5]){
               $msn="La contraseñas no coinciden";
               header("Location: index.php?c=usuario&msn=$msn");
             }

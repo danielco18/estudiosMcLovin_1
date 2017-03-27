@@ -19,8 +19,13 @@
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->Smodel->createSnack($data);
-            header("Location: index.php?c=snack&msn=$result");
+            if(empty($data[0]) || empty($data[1])) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=snack&msn=$msn");
+            }else{
+              $result = $this->Smodel->createSnack($data);
+              header("Location: index.php?c=snack&msn=$result");
+            }
         }
 
         public function update(){

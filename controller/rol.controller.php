@@ -20,8 +20,13 @@
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->Rmodel->createRol($data);
-            header("Location: index.php?c=rol&msn=$result");
+            if(empty($data[0]) || empty($data[1])) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=rol&msn=$msn");
+            }else{
+              $result = $this->Rmodel->createRol($data);
+              header("Location: index.php?c=rol&msn=$result");
+            }
         }
 
         public function update(){
