@@ -1,3 +1,5 @@
+<h1>BIENVENIDO <?php echo $_SESSION["usuario"]; ?></h1>
+<a href="index.php?c=main&a=close"><button name="buttoncerrar">CERRAR SESION</button></a>
 <div>
   <header>
     <nav class="navbar navbar-inverse navbar-static-top">
