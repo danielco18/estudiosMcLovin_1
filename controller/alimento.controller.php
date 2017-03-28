@@ -19,8 +19,13 @@
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->ALImodel->createAlimento($data);
-            header("Location: index.php?c=alimento&msn=$result");
+            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3]) || empty($data[4]) || empty($data[5]) || empty($data[6])) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=alimento&msn=$msn");
+            }else{
+              $result = $this->ALImodel->createAlimento($data);
+              header("Location: index.php?c=alimento&msn=$result");
+            }
         }
 
         public function update(){

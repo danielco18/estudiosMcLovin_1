@@ -22,9 +22,12 @@
             $tokken=randAlphanum('30');
             $userId="USU".randAlphanum('30');
             $n=3;
-            $s="Juan";
             $data = $_POST["data"];
-            if (strlen($data[2])<=8){
+            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3]) || empty($data[5])) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=usuario&msn=$msn");
+            }
+            elseif(strlen($data[2])<=8){
               $msn="La contraseña debe tener mas de 8 caracteres";
               header("Location: index.php?c=usuario&msn=$msn");
             }
@@ -39,13 +42,13 @@
             /*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
               $msn="La contraseña debe tener minimo un simbolo";
               header("Location: index.php?c=usuario&msn=$msn");
-            }*/elseif($data[2]!==$data[5]) {
+            }*/elseif($data[2]!==$data[5]){
               $msn="La contraseñas no coinciden";
               header("Location: index.php?c=usuario&msn=$msn");
             }
             else{
               $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
-              $result = $this->USmodel->createUsuario($userId,$data,$tokken,$n,$s);
+              $result = $this->USmodel->createUsuario($userId,$data,$tokken,$n);
               header("Location: index.php?c=usuario&msn=$result");
             }
         }
