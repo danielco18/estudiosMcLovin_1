@@ -9,6 +9,9 @@
         }
 
         public function mainPage(){
+          if (!isset($_SESSION["usuario"])) {
+            header("location:index.php?c=main");
+          }
             require_once 'views/include/header.php';
             require_once 'views/modules/mod_alimento/alimento.add.php';
             require_once 'views/include/footer.php';
@@ -16,11 +19,19 @@
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->ALImodel->createAlimento($data);
-            header("Location: index.php?c=alimento&msn=$result");
+            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3]) || empty($data[4]) || empty($data[5]) || empty($data[6])) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=alimento&msn=$msn");
+            }else{
+              $result = $this->ALImodel->createAlimento($data);
+              header("Location: index.php?c=alimento&msn=$result");
+            }
         }
 
         public function update(){
+          if (!isset($_SESSION["usuario"])) {
+            header("location:index.php?c=main");
+          }
           $field = $_GET["alicode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/mod_alimento/alimento.update.php';

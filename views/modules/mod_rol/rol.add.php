@@ -14,7 +14,7 @@
                     <input class="form-control" name="data[]" id="estado" required>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2">
-                    <a class="btn btn-primary" href="index.php">ATRÁS</a>
+                    <a class="btn btn-primary" href="?c=main&a=dashboard">ATRÁS</a>
                     <button class="btn btn-success">GUARDAR</button>
                 </div>
             </form>
