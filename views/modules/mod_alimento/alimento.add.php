@@ -4,7 +4,7 @@
             <h1>GESTIONAR ALIMENTOS</h1>
         </div>
         <div class="col-sm-4 col-sm-offset-4">
-            <form class="" action="?c=alimento&a=create" method="post">
+            <form class="" action="?c=alimento&a=create" method="post" onsubmit="return validar();">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input type="text" class="form-control" name="data[]" id="name" required>

@@ -4,18 +4,24 @@
             <h1>GESTIONAR ALMUERZOS</h1>
         </div>
         <div class="col-sm-4 col-sm-offset-4">
-            <form class="" action="?c=almuerzo&a=create" method="post">
+            <form class="" action="?c=almuerzo&a=create" method="post" onsubmit="return validar();">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" name="data[]" id="name" required>
+                    <input type="text" class="form-control" name="data[]" id="name" >
                 </div>
                 <div class="form-group">
                     <label for="desc">Descripción</label>
-                    <textarea class="form-control" name="data[]" id="desc" required></textarea>
+                    <textarea class="form-control" name="data[]" id="desc" ></textarea>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2">
+<<<<<<< HEAD
+                    <a class="btn btn-primary" href="index.php">ATRÁS</a>
+                    <button class="btn btn-success"
+                    >GUARDAR</button>
+=======
                     <a class="btn btn-primary" href="?c=main&a=dashboard">ATRÁS</a>
                     <button class="btn btn-success">GUARDAR</button>
+>>>>>>> refs/remotes/origin/master
                 </div>
             </form>
         </div>
