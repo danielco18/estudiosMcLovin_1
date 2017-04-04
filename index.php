@@ -1,4 +1,5 @@
 <?php
+    // si tu tio no te quiereeee quiereee baby 
     session_start();
     require_once 'model/conn.model.php';
     if (isset($_REQUEST["c"])) {
